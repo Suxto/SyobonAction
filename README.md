@@ -20,7 +20,7 @@ This version is aim to keep a copy of compilable source code.
 | <kbd>F1</kbd>                    | back to the title screen |
 | <kbd>0</kbd> at the title screen | strange dungeon (bugs may occur) |
 
-You can play on any stage by pressing <kbd>1</kbd>~<kbd>9</kbd> at the time of title.
+You can play on any stage by pressing <kbd>1</kbd>~<kbd>9</kbd> at the time of title.   
 
 ## Build Instructions
 
