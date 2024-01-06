@@ -11,13 +11,22 @@ jobs:
       build_dir: cmake-build-vs2022-${{ matrix.arch }}
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
       - name: Try build MSVC ${{ matrix.arch }}
         run: |
           mkdir ${{ env.build_dir }}
           cmake . -B ${{ env.build_dir }} -G "Visual Studio 17 2022" -A ${{ matrix.arch }}
           cmake --build ${{ env.build_dir }}
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-files
+          path: ${{ env.build_dir }}
 
+          
   try-build-mingw:
     runs-on: windows-2022
     env:
